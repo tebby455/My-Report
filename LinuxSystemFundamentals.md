@@ -15,10 +15,11 @@
 
 <a href='#Section4' style='text-decoration: none'>IV. Text Editing Tools</a>
 
-<a href='#Section5' style='text-decoration: none'>V. Filters</a>
+<a href='#Section5' style='text-decoration: none'>V. I/O Redirection</a>
 
 ***
 
+<div id='Section1'></div>
 #### I. Linux Session
 
 1. **Checking Information of a Linux system**
@@ -357,4 +358,15 @@ ___
 ___
 
 <div id='Section5'></div>
-## V. Filters
+## V. I/O Redirection
+
+- In the bash shell has three standard stream: **stdin(standard input)**, **stdout(standard output)**, **stderr(standard error)** 
+1. __Standard Input(stdin)__
+
+	- Standard Input is a stream which a program writes its output data, default stream = 0. It is request data by use of the read operation.
+	- Example: the ***dir*** and ***ls*** program 
+	- For redirection, standard input is inherited from the parent process.
+
+2. __Standard Output(stdout)__
+
+	- 
