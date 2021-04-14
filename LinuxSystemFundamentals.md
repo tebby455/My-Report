@@ -17,6 +17,8 @@
 
 <a href='#Section5' style='text-decoration: none'>V. I/O Redirection</a>
 
+<a href='#Section6' style='text-decoration: none'>VI. Filters</a>
+
 ***
 
 <div id='Section1'></div>
@@ -63,6 +65,18 @@
 			* -a: show all sockets
 
 			![netstat](images/Information/netstat.png)
+
+	- `traceroute [IP]` 
+
+		* Print the route packets trace to network host
+
+			![traceroute](images/Information/traceroute.png)
+
+	- `ping [IP]`
+
+		* `ping` sned ICMP ECHO_REQUEST to network host, it uses to check the network, or connection from source to dest.
+
+			![ping](images/Information/ping.png)
 2. **Users and access permission of users**
 
 	- ***Users***: There are accounts that you create in Linux, it relates to use ***_username_*** and ***_userID_***
@@ -361,12 +375,111 @@ ___
 ## V. I/O Redirection
 
 - In the bash shell has three standard stream: **stdin(standard input)**, **stdout(standard output)**, **stderr(standard error)** 
-1. __Standard Input(stdin)__
 
-	- Standard Input is a stream which a program writes its output data, default stream = 0. It is request data by use of the read operation.
-	- Example: the ***dir*** and ***ls*** program 
+	![topology](images/IOredirect/model.png)
+
+
+1. __`dev/null`__
+
+   -  `dev/null` is a virtual file. Everything you stored in `dev/null` is useless, it will be removed. A null device, it received anything you redirect to
+2. ___Standard Input(stdin)___
+
+	- Standard Input is a stream which a program *read* its input data, default stream = 0. It is request data by use of the *read* operation.
+	- Example: `cat /etc/passwd`, if you use `cat` without any parameter or option, it will slient execute with any input from keyboard until **CTRL D(Character EOF)**
 	- For redirection, standard input is inherited from the parent process.
 
-2. __Standard Output(stdout)__
+		![stdin](images/IOredirect/stdin.png)
 
-	- 
+	- Redirect Standard Input `<`
+
+		* Using to read data from a file, then use it to input from another file.
+
+			![redirect standard input](images/IOredirect/redirectinput.png)
+
+3. __Standard Output(stdout)__
+
+	- Standard Output is a stream which a program *writes* its output data, default stream = 1. It is request data by use of the *write* operation, example `cat hello.txt`
+
+		![stdout](images/IOredirect/stdout.png)
+
+	- Redirect Standard Output
+
+		* `1 > file`: redirect output to file, overwrite to file
+
+		* Example: `echo hello > hello.txt`
+4. __Standard Error(stderr)__
+
+	- Standard error is another output stream, used by program to output *error messsages*. It is a stream independent of standard output can be redirected separately. Default stream = 2.
+
+		![error](images/IOredirect/error.png)
+	
+	- Redirect Standard Error
+
+		* `2 > file`: use to prevent error messages from cuttering your screen
+
+			![redirect standard error](images/IOredirect/redirecterror.png)
+
+5. __`>> append to file`__
+
+	- `>>` is a operator which is adding content into the last content of file.
+
+		![append](images/IOredirect/append.png)
+
+6. __`pipe`__
+
+	- Basically, `pipe` is a type of redirecting, use output of program  then redirect to input of another program.
+	- Signal: `|`
+
+		![pipe](images/IOredirect/pipe.png)
+
+___
+
+<div id='Section6'></div>
+### VI. Filters
+
+1. __`tee`__
+
+	- `tee` put **stdin** and **stdout** into a file. Function `tee` is same `cat`. Sometime, we can use `-a` append to file.
+
+		![tee](images/filter/tee.png)
+
+2. __`grep`__
+
+	- `grep`, common use is to filter lines of text containing. There are many [OPTIONS] of `grep` for regular expressions.
+
+		![grep](images/filter/grep.png)
+		> Instead of I use _grep copy_, I can use _grep -i copy_ means ignore case
+
+3. __`cut`__
+
+	- `cut` can select columns from files.
+
+		![cut](images/filter/cut.png)
+
+4. __`tr`__
+
+	- `tr` can translate character.
+
+		![tr](images/filter/tr.png)
+
+5. __`wc`__
+
+	- `wc`, counting words from a file.
+
+		![wc](images/filter/wc.png)
+
+6. __`sort`__
+
+	- `sort` will filter file by default to an alphabetical sort.
+
+		![sort](images/filter/sort.png)
+
+7. __`uniq`__
+
+	- `uniq` remove duplicates from a sorted list
+
+		![uniq](images/filter/uniq.png)
+
+8. __`sed`__
+
+	- `sed` basic workflow is Read, Execute, Display, it often uses to filter by use regular expression.
