@@ -621,3 +621,17 @@ ___
 			* -z: pack a data
 
 		![rsync](images/basic_tool/rsync.png)
+
+***
+
+## <div class="a">The End</div>
+<style>div.a {text-align:center}</style>
+
+___
+
+<footer> <h3>References</h3>
+
+<a href='http://people.cs.uchicago.edu/~kaharris/cspp51081/Links/unix-resources/linux-fund.pdf' tyle='text-decoration: none'>Overview Linux</a>
+
+<a href='https://linux-training.be/linuxfun.pdf' tyle='text-decoration: none'>Linux Fundamentals</a>
+</footer>
