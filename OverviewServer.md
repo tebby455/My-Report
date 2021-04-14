@@ -77,10 +77,24 @@ ___
 
     ![apache](images/Web_server/webserver/apache.png)
     - _Web Server Apache_ is a open-source software for _Web Server_, support almost OS like _Unix, Linux, Windows, Mac OS,..._
-    - A software for setting and connecting between server and browser for Client(End-User). *Apache* has a highly customizable modular platform, allow _Administrator_ can be disable, add more module. Specially, _Apache_ has module for caching security, URL rewriting, authenication password, ... 
+    - A software for setting and connecting between server and browser for Client(End-User). *Apache* has a highly customizable modular platform, use _thread_ architecture so that it can be had problem in efficient, allow _Administrator_ can be disable, add more module. Specially, _Apache_ has module for caching security, URL rewriting, authenication password, ... 
 
-    b. **Web Server Nginx***
+    b. **Web Server Nginx**
     
     ![nginx](images/Web_server/webserver/nginx.png)
-    - *Ngin* is a open-source software for web server, use asynchronous event-driven architecture. This is a software for server has a highly speed and large extend, can be executed in a large connection in the same time. Famous web-servers nowadays use it like *Google, Adobe, Netflix, ...* 
+    - *Nginx* is a open-source software for web server, use asynchronous event-driven architecture. This is a software for server has a highly speed and large extend, can be executed in a large connection in the same time. Famous web-servers nowadays use it like *Google, Adobe, Netflix, ...* 
+    - *Nginx* has almost function in *Apache*, also *Nginx* be better than *Apache* by speed execution, use memory server efficiently. Resource for *Nginx* used less in a large execution.
+
+3. **Secure Sockets Layer(SSL)**
+
+- To secure between connection in server and clients with more personal and Integrity, **SSL Standard Protocol* was appeared for Security Technology, Encrypt communication connection between Server and Client.
+- Some common definitions and terms of SSL:
+
+    a. **Certificate Authority(CA)**
+    - **CA** is a organization for providing digital certificate to customer, Enterprise, Server, Coding, Software. **CA** is a third role, which support for safety exchanging.
+
+        ![CA](images/Web_server/ssl/ca.png)
+        > With *SSL(CA)* _httd_ change to *https*, *s* stand for **Security**
+
+    b. **Domain Validation(DV SSL)**
     - 
