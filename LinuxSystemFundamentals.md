@@ -19,6 +19,9 @@
 
 <a href='#Section6' style='text-decoration: none'>VI. Filters</a>
 
+<a href='#Section7' style='text-decoration: none'>VII. File Links</a>
+
+<a href='#Section8' style='text-decoration: none'>VIII. Basic Tool for Network</a>
 ***
 
 <div id='Section1'></div>
@@ -77,6 +80,13 @@
 		* `ping` sned ICMP ECHO_REQUEST to network host, it uses to check the network, or connection from source to dest.
 
 			![ping](images/Information/ping.png)
+
+	- `vnstat` 
+
+		* `vnstat` use to check bandwidth and packet rate of network card.
+
+			![vnstat](images/Information/vnstat.png)
+			> command _-l_ to show in real time, _-i_ to choose interface, you can check in _ifconfig_
 2. **Users and access permission of users**
 
 	- ***Users***: There are accounts that you create in Linux, it relates to use ***_username_*** and ***_userID_***
@@ -308,7 +318,48 @@ ___
 		* To move a file `mv aloha.txt 
 			![mv-move](images/command/file/mv-move.png)
 
-3. **Working with file contents**
+	- __`zip and unzip`__
+
+		* `zip` is used to pack files into 1 file with smaller size. In Linux, there are many type of zip, **tar, gzip, zip, bz, 7z, ...**
+
+			1. `tar`
+
+				- `tar` a tool zip popular in Linux, last of files have `.tar`
+				- **Syntax** `tar [OPTIONS] file`
+
+					* Common [OPTIONS]
+
+						* -cvf: to create a storage file, locate to it then pack, show working on screen
+						* -cvzf: the same but work with only `.gz`, common use in file has `.tar.gz`
+
+			2. `gzip`
+
+				- **Syntax** `gzip [OPTIONS] filename`
+
+					* Common [OPTIONS] 
+
+						* -1~9: level for zip
+						* -l: check attribute file zip
+
+		* `unzip` to unpack file zipped
+
+			1. `tar`
+
+				- **Syntax** 
+
+					* -xvf: create a storage then unpack in there.
+					* -xvzf: the same but in `.gz`
+
+            2. `gzip`
+
+				- **Syntax** `gzip [OPTIONS] filename`
+
+					* Common [OPTIONS] 
+
+						* -1~9: level for zip
+						* -l: check attribute file zip
+
+1. **Working with file contents**
 
 	a. __`head`__ 
 
@@ -483,3 +534,90 @@ ___
 8. __`sed`__
 
 	- `sed` basic workflow is Read, Execute, Display, it often uses to filter by use regular expression.
+
+___
+
+<div id='Section7'></div>
+### VII. File Links
+
+1. **Hard Links**
+
+	- When you create a **hard link** to a file win `ln`, an extra entry is added in the directory.
+
+		![hardlink](images/file_link/hardlink.png)
+
+	- `ln` is a tool for create a files system to only an app with diferrent structure for efficient.
+
+2. **Symbolic Links**
+
+	- **Symbolic links** is a special file point to another directory, it called **target**. When its created, it can be replaced instead **target**. It is unique and can be placed anywhere you want. 1 target can be pointed to many symbolic links.
+
+		![symbolic links](images/file_link/symlink.png)
+
+___
+
+<div id='Section8'></div>
+### VIII. Basic Linux Tool
+
+1. ***nmap tool***
+
+	- `nmap` is a open-source port scanner for UNIX and Windows. It supports a wide variety of scan types. Providing to assist users of nmap in scaning own network, or network has been given permission, also to determine the security of network. It also a Network exploration tool and security/ port scanner.
+	- **Syntax** `nmap [Scan types] [OPTIONS] <target IP or DNS>
+
+		* Common [Scantype] [OPTION]: 
+
+			* -sn: ping scan withour port
+			* Scan techniques: -sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Mainmon scan
+			* -sU: UDP scan
+			* -sV: probe open ports to determone serivce/version
+			* -sC: script scan
+
+			![scan](images/basic_tool/nmap/scan.png)
+
+2. __`git`__
+
+	- Git is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people. Gis is a ***Distributed Version Control System***. 
+
+		![workflow](images/basic_tool/git/workflow.png)
+
+	- Common Command Line in GIT:
+
+		* `git add`: to add file that is in the working directory
+		* `git commit`: to add all files that are staged to the local repository
+		* `git push`: add all file in the local repository to GitHub.
+		* `git clone`: to Download a repository of someone in GitHub.
+
+3. **Telnet**
+
+	- A protocol to remote access to another PC, Router,... Telnet protocol, is used popular in local, because it does not have security, so that it connects fast.
+  
+		![telnet](images/basic_tool/telnet.png)
+
+4. **Secure Shell(SSH)**
+
+	- A protocol allow user can remote access to another computer in Internet. It has security, encode passwd, so that connect lower than Telnet
+
+		![ssh](images/basic_tool/ssh.png)
+
+	- **generate ssh-key***
+
+		* use the _ssh-keygen_ to generate a public/private authenication key pair, allow users connect withour supplying password, but keys must be generated for each users.
+
+			![ssh-key](images/basic_tool/ssh-key.png)
+			> Importing a key to ssh
+
+			![key](images/basic_tool/key.png)
+			> my ssh-keygen
+
+5. __`rsync`__
+
+	- `rsync` is a tool for copy, sync data between host and server in Linux
+	- **Syntax** `rsync [OPTPIONS] [USER@]HOST:SRC [DEST]`
+
+		* Common [OPTIONS]
+
+			* -r: copy data recursive
+			* -a: archive mode
+			* -z: pack a data
+
+		![rsync](images/basic_tool/rsync.png)
