@@ -22,10 +22,10 @@
 <a href='#Section7' style='text-decoration: none'>VII. File Links</a>
 
 <a href='#Section8' style='text-decoration: none'>VIII. Basic Tool for Network</a>
+
 ***
 
-<div id='Section1'></div>
-#### I. Linux Session
+#### I. Linux Session <div id='Section1'></div>
 
 1. **Checking Information of a Linux system**
 
@@ -184,8 +184,8 @@
 
 _ _ _
 
-<div id='Section2'></div>
-### II. Process Control
+
+### II. Process Control <div id='Section2'></div>
 
 1. **Overview**
 
@@ -217,10 +217,10 @@ _ _ _
 
 	- `kill <PID>` when you install a tool, but it has conflict with PID(ex: PID=111), so you have to kill it if it does not affect with running system.
 	-  Example: kill a process with PID is 10, `kill -9 10`, _-9_ is shutdown immediately.
+
 ___
 
-<div id='Section3'></div>
-### III. Basic command line with Linux
+### III. Basic command line with Linux <div id='Section3'></div>
 
 1. **Working with directories**
 
@@ -391,8 +391,7 @@ ___
 
 	___
 
-<div id='Section4'></div>
-## IV. Text Editing Tools
+### IV. Text Editing Tools <div id='Section4'></div>
    - In Linux, almost Text Editor can be used for developer, coding with better efficiency than compiler.
 
 
@@ -422,8 +421,7 @@ ___
 
 ___
 
-<div id='Section5'></div>
-## V. I/O Redirection
+### V. I/O Redirection <div id='Section5'></div>
 
 - In the bash shell has three standard stream: **stdin(standard input)**, **stdout(standard output)**, **stderr(standard error)** 
 
@@ -485,8 +483,7 @@ ___
 
 ___
 
-<div id='Section6'></div>
-### VI. Filters
+### VI. Filters <div id='Section6'></div>
 
 1. __`tee`__
 
@@ -537,8 +534,7 @@ ___
 
 ___
 
-<div id='Section7'></div>
-### VII. File Links
+### VII. File Links <div id='Section7'></div>
 
 1. **Hard Links**
 
@@ -556,8 +552,7 @@ ___
 
 ___
 
-<div id='Section8'></div>
-### VIII. Basic Linux Tool
+### VIII. Basic Linux Tools <div id='Section8'></div>
 
 1. ***nmap tool***
 
