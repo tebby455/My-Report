@@ -7,6 +7,7 @@ With a modern society, technology is becoming popular over the world, any Compan
 ## Outline
 
 <a href='#Section1' style='text-decoration: none'>I. Server</a>
+
 <a href='#Section2' style='text-decoration: none'>II. Web Server</a>
 
 ___
@@ -61,3 +62,25 @@ ___
 1. **Web Server** is mean a large Systems/Computers is connected together to an extensive set of network conputers.
 
 ![model](images/Web_server/model.png)
+
+- **Web server** can be known in _Physical_ and _Software_:
+
+    a. **Physical** 
+    - **Web Server** is a computer that store images, data in HTML, CSS, JavaScrip of a website, provide service to End-user (Client).
+
+    b. **Software**
+    - **Web Server** redirect users to its data to HTTP server. HTTP server is a software that can be understand all of website URL and protocols for use these website.
+
+2. **Web Server popular nowadays**
+
+    a. **Web Server Apache**
+
+    ![apache](images/Web_server/webserver/apache.png)
+    - _Web Server Apache_ is a open-source software for _Web Server_, support almost OS like _Unix, Linux, Windows, Mac OS,..._
+    - A software for setting and connecting between server and browser for Client(End-User). *Apache* has a highly customizable modular platform, allow _Administrator_ can be disable, add more module. Specially, _Apache_ has module for caching security, URL rewriting, authenication password, ... 
+
+    b. **Web Server Nginx***
+    
+    ![nginx](images/Web_server/webserver/nginx.png)
+    - *Ngin* is a open-source software for web server, use asynchronous event-driven architecture. This is a software for server has a highly speed and large extend, can be executed in a large connection in the same time. Famous web-servers nowadays use it like *Google, Adobe, Netflix, ...* 
+    - 
