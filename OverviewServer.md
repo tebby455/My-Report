@@ -14,6 +14,8 @@ With a modern society, technology is becoming popular over the world, any Compan
 
 <a href='#Section4' style='text-decoration: none'>IV. Domain</a>
 
+<a href='#Section5' style='text-decoration: none'>V. Demontration</a>
+
 ___
 
 <div id='Section1'></div>
@@ -216,13 +218,42 @@ ___
 
 ***
 
-<!-- <div id='Section5'></div>
+<div id='Section5'></div>
 
 ### V. Demontration
 
-1. ***SSL Certificate Authority for HTTPS in local***
+<!-- 1. ***SSL Certificate Authority for HTTPS in local***
 
     ![create rootCA.key](images/Web_server/demo/ssl/rootCA.png)
     ![check key](images/Web_server/demo/ssl/checkKey.png)
     ![root Certificate](images/Web_server/demo/ssl/rootCert.png)
     ![import](images/Web_server/demo/ssl/import.png) -->
+
+1. **DNS Server**
+
+    ![install bind 9](images/Web_server/demo/dns/install.png)
+    > Install bind9
+
+    ![Create Forward Zone](images/Web_server/demo/dns/createzone.png)]
+    > Create a forward zone in `/etc/bind/named.conf.local`
+
+    ![Create Reverse Zone](images/Web_server/demo/dns/reversezone.png)
+    > Also in that file, add more reverse zone.
+
+    ![Create Lookup File](images/Web_server/demo/dns/createlookup.png)
+    > Copy a file _db.local_ to _foward.tebby455.info.db_, also in reverse
+
+    ![Forward](images/Web_server/demo/dns/forwardfile.png)
+    > Edit like in picture
+
+    ![Reverse](images/Web_server/demo/dns/reversefile.png)
+    > Edit like in picture
+
+    ![dns](images/Web_server/demo/dns/check.png)
+    > Check configure, if did not show anything, it is success
+
+    ![checkzone](images/Web_server/demo/dns/checkzone.png)
+    > Check _named-checkzone_ both 
+
+    ![bingo](images/Web_server/demo/dns/bingo.png)
+    > Bingo 
