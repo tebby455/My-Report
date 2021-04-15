@@ -135,8 +135,15 @@ ___
    - _Domain_ is a website address which people usually type it in URL bar to access website, it is typed in _IP Address_
 
         ![example](images/Web_server/domain/example.png)
+        > I can access to _Google.com_ with IP Address is 172.217.161.174
 
-    - 
+    - _Domain_ defines your indentity, so that every enterprise, company, organization also have a domain if they are in the Internet. Managing, operating your own website and for more professional.
+
+        ![sttructure](images/Web_server/domain/structure.png)
+
+    - **Top level domain (TLD)**
+
+        * __TLD__ is the highest domain, a extended part in behind _yourDomainName_. Popular is `.com`, `.org`, `.edu`, ... **TLDs** are manged by an Organization called Internet Assigned Numbers Authority (IANA), to view all of _TLD_ <a href='https://www.iana.org/domains/root/db'>here</a>
 
 2. ***Domain Name System (DNS)***
 
