@@ -10,6 +10,10 @@ With a modern society, technology is becoming popular over the world, any Compan
 
 <a href='#Section2' style='text-decoration: none'>II. Web Server</a>
 
+<a href='#Section3' style='text-decoration: none'>III. Domain</a>
+
+<a href='#Section4' style='text-decoration: none'>IV. Domain</a>
+
 ___
 
 <div id='Section1'></div>
@@ -129,6 +133,8 @@ ___
 
 ___
 
+<div id='Section3'></div>
+
 ### III. Domain
 
 1. ***What is Domain?***
@@ -141,12 +147,82 @@ ___
 
         ![sttructure](images/Web_server/domain/structure.png)
 
-    - **Top level domain (TLD)**
+    - **Top level Domain (TLD)**
 
-        * __TLD__ is the highest domain, a extended part in behind _yourDomainName_. Popular is `.com`, `.org`, `.edu`, ... **TLDs** are manged by an Organization called Internet Assigned Numbers Authority (IANA), to view all of _TLD_ <a href='https://www.iana.org/domains/root/db'>here</a>
+        * __TLD__ is the highest domain, a extended part in behind _yourDomainName_. Popular is `.com`, `.org`, `.edu`, ... **TLDs** are manged by an Organization called Internet Assigned Numbers Authority (IANA), to view all of _TLD_ <a href='https://www.iana.org/domains/root/db' target="_blank">here</a>
+        * __TLD__ separated into 2 type: __TLD__ for countries (ccTLDs), __TLD__ for global (gTLDs)
+
+            * __Country-code Top level Domain__ to defines for a sepcific country. Example, `.vn` for **Viet Nam**, `.us` for **United States (America)**, ...
+            * __Generic Top level Domain (gTLDs)__ Independance for any Country, purpose for not only specific using like for Education is `.edu`, but also for everyone using like `.com` not using for _commercial_
+
+    - **Sub Domain**
+
+        * **Sub domain** which created by webmaster after building to separate each services in webserver.
+
+            ![subdomain](images/Web_server/domain/subdomain.png)
 
 2. ***Domain Name System (DNS)***
 
-     - **DNS** is a system for exchanging _Domain_ to format like `www.domain_name.com` 
+     - **DNS** is a system for exchanging _Domain_ to format like `www.domain_name.com`. Example, instead of you will remember _IP Address_ of _Google.com_ is 172.217.161.174, you just remember that _DNS_ is _Google.com_
 
         ![dns](images/Web_server/domain/dns.png)
+
+    - **Common DNS record**
+
+        * **CNAME Record**: Allow you to create a new name, point to the default name then set TTL (Time to live). Summary, to create manys name in domain, use this record (CNAME).
+        *  **A Record**: This record is popular to point to a Website with specific IP Address. This is a basical record.
+
+            ![A record](images/Web_server/domain/arecord.png)
+        *  **MX record**: With this record, you can point from Domain to Mail Server, set TTL, priority. **MX record** point to which Server manage which Email service of DNS.
+
+            ![mxrecord](images/Web_server/domain/mxrecord.png)
+
+        * **AAAA Record**: To point to a website whit IPV6 Address, need to use **AAAA record**. 
+        * **TXT Record**: Adding `txt` value, new host, Points To, TTL for containing information with text type of Domain.
+        * **SRV Record**: Defining exactly which services use which ports. This is a special record, you could add more name, priority, port, weight, TTL, Points To.
+        * **NS Record**: With this record, you can point to specific Name Server for each subdomain. 
+
+    - **Types of DNS Server**
+
+        * __Root Name Server__: A DNS Server contain information to search other authority for top-level-domain
+
+            ![root name server](images/Web_server/domain/rootname.png)
+
+        * __Local Name Server__: A server contain information to search DNS stored for lower level domain. It is usually maintained by enterprise, or Internet provider (ISPs).
+
+            ![local name server](images/Web_server/domain/localname.png)
+
+    - **DNS Operating Principles**
+
+        ![operation](images/Web_server/domain/operate.png)
+
+___ 
+
+<div id='Section4'></div>
+
+### IV. Proxy Reverse
+
+1. ***What is Reverse Proxy***
+
+    - **Reverse Proxy** is a proxy intermediaries between a server and clients. Checking all request of clients, if valid it will be exchanged to suitable server. **Rverse Proxy** usually deploy to support increase security, efficiency and reliable.
+
+        ![flow reverse proxy](images/Web_server/reverse_proxy/flow.png)
+
+2. ***Benefits of Reverse Proxy***
+
+    - **Security**: By blocking requests from being sent to your backend server, the reverse proxy server protects our identity and acts as a safeguard against security attacks. With a reverse proxy server a website or service will never reveal the IP addresses of the original servers. This makes these attacks difficult to execute.
+
+    - **Balance downloading:** If many servers run the same application, _Reverse Proxy_ can distribution with the same for each server.
+
+***
+
+<!-- <div id='Section5'></div>
+
+### V. Demontration
+
+1. ***SSL Certificate Authority for HTTPS in local***
+
+    ![create rootCA.key](images/Web_server/demo/ssl/rootCA.png)
+    ![check key](images/Web_server/demo/ssl/checkKey.png)
+    ![root Certificate](images/Web_server/demo/ssl/rootCert.png)
+    ![import](images/Web_server/demo/ssl/import.png) -->
