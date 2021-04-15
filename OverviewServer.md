@@ -85,16 +85,61 @@ ___
     - *Nginx* is a open-source software for web server, use asynchronous event-driven architecture. This is a software for server has a highly speed and large extend, can be executed in a large connection in the same time. Famous web-servers nowadays use it like *Google, Adobe, Netflix, ...* 
     - *Nginx* has almost function in *Apache*, also *Nginx* be better than *Apache* by speed execution, use memory server efficiently. Resource for *Nginx* used less in a large execution.
 
-3. **Secure Sockets Layer(SSL)**
+3. **Secure Sockets Layer (SSL)**
 
 - To secure between connection in server and clients with more personal and Integrity, **SSL Standard Protocol* was appeared for Security Technology, Encrypt communication connection between Server and Client.
 - Some common definitions and terms of SSL:
 
-    a. **Certificate Authority(CA)**
+    a. **Certificate Authority (CA)**
     - **CA** is a organization for providing digital certificate to customer, Enterprise, Server, Coding, Software. **CA** is a third role, which support for safety exchanging.
 
         ![CA](images/Web_server/ssl/ca.png)
-        > With *SSL(CA)* _httd_ change to *https*, *s* stand for **Security**
+        > With *SSL(CA)* _http_ change to *https*, *s* stand for **Security**
 
     b. **Domain Validation(DV SSL)**
+    - **DV SSL** is a digital certificate for Domain Name - Website. **DV SSL** gives that Domain more reliable while exchanging data.
+
+        ![dvssl](images/Web_server/ssl/dvssl.png)
+
+    c. **Organization Validation (OV SSL)**
+    - **OV SSL** is a digital certificate for Website and confirm that Organization owned this Website.
+
+        ![ovssl](images/Web_server/ssl/ovssl.png)
+
+    d. **Extended Validation (EV SSL)**
+    - **EV SSL** to show Website have the highest security and trust for customers.
+
+        ![evssl](images/Web_server/ssl/evssl.png)
+
+    e. **Wildcard SSL**
+    - **Wildcard SSL** is spent for Website has many different subdomain. With _Wildcard SSL_ allow running in many subdomain and domain website.
+
+        ![wildcard SSL](images/Web_server/ssl/wildcard.png)
+
+    f. **Subject Alternative Names (SANs SSL)**
+    - **SANs SSL** security for only one Domain has been accredited before. **SANs SSL** has more secure than **Wildcard SSL* and reduce cost for deploying all of domain and server if neccessary.
+
+  > To recognize a website has SSL or not, we check in the URL of website, we can see _http_ or _https_ and has a green check for SSL and red check for not.
+
+- Why the website use SSL? 
+
+    * Using for security in website 
+    * For copyright website in organization or enterprise, ...
+    * Having trust for customers when they access to the website.
+
+___
+
+### III. Domain
+
+1. ***What is Domain?***
+   - _Domain_ is a website address which people usually type it in URL bar to access website, it is typed in _IP Address_
+
+        ![example](images/Web_server/domain/example.png)
+
     - 
+
+2. ***Domain Name System (DNS)***
+
+     - **DNS** is a system for exchanging _Domain_ to format like `www.domain_name.com` 
+
+        ![dns](images/Web_server/domain/dns.png)
