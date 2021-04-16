@@ -256,4 +256,13 @@ ___
     > Check _named-checkzone_ both 
 
     ![bingo](images/Web_server/demo/dns/bingo.png)
-    > Bingo 
+
+    ![nslookup](images/Web_server/demo/dns/nslookup.png)
+
+    ![bingoo](images/Web_server/demo/dns/bingooo.png)
+
+2. **Reverse Proxy**
+
+    ![code](images/Web_server/demo/proxy/code.png)
+    ![enable proxy](images/Web_server/demo/proxy/enable.png)
+    Bingo
