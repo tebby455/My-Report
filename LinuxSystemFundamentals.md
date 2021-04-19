@@ -534,7 +534,10 @@ ___
 
 ___
 
-### VI. Filters <div id='Section6'></div>
+
+<div id='Section6'></div>
+
+### VI. Filters 
 
 1. __`tee`__
 
@@ -585,7 +588,9 @@ ___
 
 ___
 
-### VII. File Links <div id='Section7'></div>
+<div id='Section7'></div>
+
+### VII. File Links
 
 1. **Hard Links**
 
@@ -602,6 +607,8 @@ ___
 		![symbolic links](images/file_link/symlink.png)
 
 ___
+
+<div id='Section8'></div>
 
 ### VIII. Basic Linux Tools <div id='Section8'></div>
 
