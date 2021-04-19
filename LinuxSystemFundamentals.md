@@ -9,9 +9,29 @@
 
 <a href='#Section1' style='text-decoration: none'>I. Linux Session</a>
 
+<ol>
+    <li><a href='#Section1.1' style='text-decoration: none'>Whecking Information of a Linux system</a>
+    <li><a href='#Section1.2' style='text-decoration: none'>Users and access permission of users</a>
+	<li><a href='#Section1.3' style='text-decoration: none'>Checking current Disk usage "df command"</a>
+	<li><a href='#Section1.4' style='text-decoration: none'>Checking summarize disk usage of the set of FILEs "du command"</a>
+	<li><a href='#Section1.5' style='text-decoration: none'>Checking Disk Partition</a>
+</ol>
+
 <a href='#Section2' style='text-decoration: none'>II. Process Control</a>
 
+<ol>
+    <li><a href='#Section2.1' style='text-decoration: none'>Overview</a>
+    <li><a href='#Section2.2' style='text-decoration: none'>Viewing process status "top"</a>
+    <li><a href='#Section2.3' style='text-decoration: none'>Kill a process</a>
+</ol>
+
 <a href='#Section3' style='text-decoration: none'>III. Basic Command line with Linux</a>
+
+<ol>
+    <li><a href='#Section3.1' style='text-decoration: none'>Working with Directories</a>
+    <li><a href='#Section3.2' style='text-decoration: none'>Working with Files</a>
+    <li><a href='#Section3.3' style='text-decoration: none'>Working with file content</a>
+</ol>
 
 <a href='#Section4' style='text-decoration: none'>IV. Text Editing Tools</a>
 
@@ -25,7 +45,11 @@
 
 ***
 
-#### I. Linux Session <div id='Section1'></div>
+<div id='Section1'></div>
+
+#### I. Linux Session
+
+<div id='Section1.1'></div>
 
 1. **Checking Information of a Linux system**
 
@@ -87,6 +111,9 @@
 
 			![vnstat](images/Information/vnstat.png)
 			> command _-l_ to show in real time, _-i_ to choose interface, you can check in _ifconfig_
+
+<div id='Section1.2'></div>
+
 2. **Users and access permission of users**
 
 	- ***Users***: There are accounts that you create in Linux, it relates to use ***_username_*** and ***_userID_***
@@ -100,6 +127,8 @@
 
 		* ***root***: If users have ***root*** permission, those users can be accessed anything in system. These are called ***superuser***, have an userUID=0.
 		* ***normal***: It means that users have userUID#0, oftenly users that clients create a new user in system. These are work in permission of ***user with root permission***. 
+
+<div id='Section1.3'></div>
 
 3. ___Checking current Disk usage *df command*___
   a. ***df*** command
@@ -116,7 +145,10 @@
       * -H: show block Size in power of 1000 (ex: 1.1G)
       * --total: show a sum of all of disk (ex: I have 2 disk 100G of each, there is will show a line total is 200G)
       * -T: show a file Type (ex: I partition disk to store data is /dev/sda4, it is ***a ext4 type***
-3. ___Checking summarize disk usage of the set of FILEs *du command*___
+
+<div id='Section1.4'></div>
+
+4. ___Checking summarize disk usage of the set of FILEs *du command*___
 	a. ***du command***
     	- Showing disk usage then estimate for space usage. For example: I have disk A with size is 100GB, I use command, it shows that my Disk A used 2GB, for that I               could estimate space usage of Disk A.  
   	b. ***Syntax***: du [OPTION] ... [FILE] ... (recommended to use)
@@ -135,7 +167,9 @@
 	* -d + [number]: show the total level for a directory (ex: my [number] is 1, I am in ***/home/name***, it will show ***/home/name/Downloads***, if number is 2 it shows ***/home/name/Downloads*** and ***/home/name/Downloads/Telegram***)
 	* -s: show only total of directory
 
-4. **Checking Disk Partition**
+<div id='Section1.5'></div>
+
+5. **Checking Disk Partition**
 
 	a. ***fdisk*** command
 	
@@ -185,7 +219,11 @@
 _ _ _
 
 
-### II. Process Control <div id='Section2'></div>
+<div id='Section2'></div>
+
+### II. Process Control
+
+<div id='Section2.1'></div>
 
 1. **Overview**
 
@@ -195,6 +233,8 @@ _ _ _
 		* __Background Process:__ Every processes that you run, it does not interact with your shell directly. You can run other process while Background Processes are running. Example: I run `sudo`, it will run in system, to stop it `exit`
 
 			![example](images/process/example.png)
+
+<div id='Section2.2'></div>
 
 2. **Viewing process status __`top`__**
 
@@ -213,6 +253,9 @@ _ _ _
 		> NI: Nice Value of task, positive NI means lower priority, negative means higher priority
 		> VIRT: virutal memory used
 		> SHR: shared memory size
+
+<div id='Section2.3'></div>
+
 3. **Kill a process**
 
 	- `kill <PID>` when you install a tool, but it has conflict with PID(ex: PID=111), so you have to kill it if it does not affect with running system.
@@ -220,7 +263,11 @@ _ _ _
 
 ___
 
-### III. Basic command line with Linux <div id='Section3'></div>
+<div id='Section3'></div>
+
+### III. Basic command line with Linux
+
+<div id='Section3.1'></div>
 
 1. **Working with directories**
 
@@ -278,6 +325,8 @@ ___
 		> I can not delete because in _mydir_ it has other directories
 
 	- In order to delete by `rmdir`, also use `rm (remove dir)` it can deleted directories that have content inside and common [OPTIONS] is `-rf`
+
+<div id='Section3.2'></div>
 
 2. **Working with files**
 
@@ -359,7 +408,9 @@ ___
 						* -1~9: level for zip
 						* -l: check attribute file zip
 
-1. **Working with file contents**
+<div id='Section3.3'></div>
+
+3. **Working with file contents**
 
 	a. __`head`__ 
 

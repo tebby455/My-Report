@@ -8,19 +8,39 @@ With a modern society, technology is becoming popular over the world, any Compan
 
 <a href='#Section1' style='text-decoration: none'>I. Server</a>
 
+<ol>
+    <li><a href='#Section1.1' style='text-decoration: none'>What is Server? </a>
+    <li><a href='#Section1.2' style='text-decoration: none'>Types of Server</a>
+</ol>
+
+
 <a href='#Section2' style='text-decoration: none'>II. Web Server</a>
+
+<ol>
+    <li><a href='#Section2.1' style='text-decoration: none'>Web Server </a>
+    <li><a href='#Section2.2' style='text-decoration: none'>Web Server popular nowadays</a>
+    <li><a href='#Section2.3' style='text-decoration: none'>Secure Sockets Layer (SSL)</a>
+</ol>
 
 <a href='#Section3' style='text-decoration: none'>III. Domain</a>
 
-<a href='#Section4' style='text-decoration: none'>IV. Domain</a>
+<ol>
+    <li><a href='#Section3.1' style='text-decoration: none'>What is Domain? </a>
+    <li><a href='#Section3.2' style='text-decoration: none'>Domain Name System (DNS)</a>
+</ol>
+
+<a href='#Section4' style='text-decoration: none'>IV. Proxy Reverse</a>
 
 <a href='#Section5' style='text-decoration: none'>V. Demontration</a>
+
 
 ___
 
 <div id='Section1'></div>
 
 ### I. Server
+
+<div id='Section1.1'></div>
 
 1. **What is a Server?**
 
@@ -29,6 +49,8 @@ ___
 
 - Example: In model Client-Server, at least we have 2 machine, I call A and B. If I use machine A to install application like web-server, database-server for providing machine B allow acces and use my data. So machine A is a server, machine B is a client.
     ![server](images/Web_server/server.png)
+
+<div id='Section1.2'></div>
 
 2. **Type of Server**
 
@@ -65,6 +87,8 @@ ___
 
 ### II. Web Server
 
+<div id='Section2.1'></div>
+
 1. **Web Server** is mean a large Systems/Computers is connected together to an extensive set of network conputers.
 
 ![model](images/Web_server/model.png)
@@ -76,6 +100,8 @@ ___
 
     b. **Software**
     - **Web Server** redirect users to its data to HTTP server. HTTP server is a software that can be understand all of website URL and protocols for use these website.
+
+<div id='Section2.2'></div>
 
 2. **Web Server popular nowadays**
 
@@ -90,6 +116,8 @@ ___
     ![nginx](images/Web_server/webserver/nginx.png)
     - *Nginx* is a open-source software for web server, use asynchronous event-driven architecture. This is a software for server has a highly speed and large extend, can be executed in a large connection in the same time. Famous web-servers nowadays use it like *Google, Adobe, Netflix, ...* 
     - *Nginx* has almost function in *Apache*, also *Nginx* be better than *Apache* by speed execution, use memory server efficiently. Resource for *Nginx* used less in a large execution.
+
+<div id='Section2.3'></div>
 
 3. **Secure Sockets Layer (SSL)**
 
@@ -139,6 +167,8 @@ ___
 
 ### III. Domain
 
+<div id='Section3.1'></div>
+
 1. ***What is Domain?***
    - _Domain_ is a website address which people usually type it in URL bar to access website, it is typed in _IP Address_
 
@@ -162,6 +192,8 @@ ___
         * **Sub domain** which created by webmaster after building to separate each services in webserver.
 
             ![subdomain](images/Web_server/domain/subdomain.png)
+
+<div id='Section3.2'></div>
 
 2. ***Domain Name System (DNS)***
 
@@ -264,5 +296,10 @@ ___
 2. **Reverse Proxy**
 
     ![code](images/Web_server/demo/proxy/code.png)
+    > Locate to file name _/etc/apache2/site-available/Apache2Proxy.conf_ configure like picture
+    > Copy it into directory _/etc/apache2/site-enable/_, because apache run based on _site-enable_
     ![enable proxy](images/Web_server/demo/proxy/enable.png)
+    > Turn on **proxy** `a2enmod proxy`
+    > Turn on **proxy_http** `a2enmod proxy_http`
+    > Restart apache to activate `systemcl restart apache2` or `service apache2 restart`
     Bingo
