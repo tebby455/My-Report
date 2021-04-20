@@ -30,6 +30,10 @@ c. **Configure MySQL-Server**
 d. **Install Wordpress and setup**
 
 ![create database](images/ubuntu/createdatabase.png)
+> Setup database, if you want to confifure to remote acces, use _'user'@'%'_ instead of _'user'@'localhost'_
+> Add _with grant option;_ in the last of line _grant all privileges_
+
+
 > Download wordpress
 
 ![download](images/ubuntu/wgetwp.png)
@@ -124,3 +128,50 @@ d. **Install Wordpress and setup**
 > Connected
 
 ### 4. ***phpmyadmin***
+
+To Install `phpmyadmin`, we install these packages.
+
+> apt-get install phpmyadmin php-mbstring php-gettext –y
+
+> In _php_ version 7.0 to latest, php-gettext will be changed by _php-common_
+
+> In apache2, while installing _phpmyadmin_ you can create database default by dkconfig-common
+> Default database is _phpmyadmin_, password you set.
+
+![success installing phpmyadmin](images/ubuntu/Successphpmyadmin.png)
+> Symbolic links _/usr/share/phpmyadmin/ /var/www/html_ if you run not found.
+
+> Run it _[your IP]/phpmyadmin_
+
+![login phpmyadmin](images/ubuntu/loginphpmyadmin.png)
+
+> login with your database and password
+
+### 5. **Laravel** 
+
+`apt install composer`
+
+`apt install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear`
+
+![download Laravel](images/ubuntu/downloadLaravel.png)
+
+`composer create-project laravel/laravel {dirname}`
+
+![laravel](images/ubuntu/laravel.png)
+
+
+![set up database](images/ubuntu/databaseLravel.png)
+> setup database for _laravel_, in here i setup for anyone can remote access to this.
+
+![laravel configure](images/ubuntu/laravelconf.png)
+> create a file _laravel.conf_ in _/etc/apache2/sites-available/laravel.conf_ then enanle it by `a2ensite laravel.conf`
+> Or you can symbolic link _laravel.conf_
+
+![configure env](images/centos7/wordpress/configEnv.png)
+> Open file _/var/www/html/laravel/.env_ edit with your database
+
+![before running](images/ubuntu/beforeRunning.png)
+> Run command _php artisan serve --host=192.168.111.222 --port=8000_ before go to web.
+
+![success](images/ubuntu/laravelRunning.png)
+> Type _[IP]:port_
