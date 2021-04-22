@@ -175,3 +175,134 @@ To Install `phpmyadmin`, we install these packages.
 
 ![success](images/ubuntu/laravelRunning.png)
 > Type _[IP]:port_
+
+# Compiling and Installing from Source (Apache & Nginx)
+
+### 1. Nginx
+
+**Install PCRE**
+
+> PCRE is a require module for the NGINX core and rewrite.
+
+![download PCRE from source](images/ubuntu/Compile/nginx/downloadPCRE.png)
+> Unzip it by _tar -xvzf [file]_
+
+> locate to File then _./configure_
+
+> make
+
+> make install
+
+**Install zlib**
+
+> zlib - support header compression
+
+![download zlib](images/ubuntu/Compile/nginx/downloadzlib.png)
+
+> Unzip it by _tar -xvzf [file]_
+
+> locate to file unziped then _./Configure_
+
+> running **Make**
+
+> **Make install**
+
+**Install OpenSSL**
+
+> OpenSSL supports the HTPS protocol
+
+![download OpenSSL](images/ubuntu/Compile/nginx/downloadOpenSSL.png)
+
+> Unzip it by _tar -xvzf [file]_
+
+> locate to file unziped then _./Configure_
+
+> running **Make**
+
+> **Make install**
+
+**Install Nginx**
+
+> Download stable version of Nginx
+
+`wget https://nginx.org/download/nginx-1.20.0.tar.gz`
+
+> Unzip it `tar -xvzf [file]`
+
+`mkdir  -p /web/nginx`
+`mkdir /web/nginx/modules`
+`mkdir  /web/nginx/run`
+
+`./configure --prefix=/web/nginx --modules-path=/web/nginx/modules --with-http_ssl_module  --without-http_fastcgi_module --without-http_uwsgi_module --without-http_grpc_module --without-http_scgi_module --without-mail_imap_module --without-mail_pop3_module `
+
+> Then make && make install
+
+> locate to _/usr/local/nginx/sbin_ then _./nginx_ to start service
+
+![start Nginx](images/ubuntu/Compile/nginx/startNginx.png)
+
+### 2. Apache
+
+**Install APR & APR-Util**
+
+> This is Apache Portable Runtime is supporting library for the Apache webs server.
+
+1. **APR**
+
+> Download it from source: wget https://mirror.downloadvn.com/apache//apr/apr-1.7.0.tar.gz 
+
+> After downloading, unzip it _tar -xvzf [file]_
+
+Running `./configure --prefix=/usr/local/apr`
+
+> running **Make**
+
+> **Make install**
+
+1. **APR-Utils**
+
+> Download it from source: wget https://mirror.downloadvn.com/apache//apr/apr-util-1.6.1.tar.gz
+
+> After downloading, unzip it _tar -xvzf [file]_
+
+Running `./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr/`
+
+- If you running then has a problem with expat, do this:
+
+    * Downloading from here: `wget https://github.com/libexpat/libexpat/releases/download/R_2_3_0/expat-2.3.0.tar.gz`
+    * `./configure --prefix=/usr/local/expat`
+    * `make`
+    * `make install`
+
+After this, running `./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr/ --with-expat=/usr/local/expat/`
+
+> **Make**
+
+> **Make Install**
+
+3. **Apache (httpd 2.4)**
+
+> Download it from source: wget https://downloads.apache.org/httpd/httpd-2.4.46.tar.gz
+
+> Unzip it `tar -xvzf [file]`
+
+Running `./configure --prefix=/usr/local/apache2 --with-apr=/usr/local/apr/ --with-expat=/usr/local/expat/`
+
+> **Make**
+
+> **Make Install**
+
+> Configure apache, because I install nginx and apache running dual, so I have to set port for each, default port of each is 80
+
+`cd /usr/local/apache2/conf/httpd.conf`
+![set Port](images/ubuntu/Compile/nginx/setPort.png)
+
+![set Server](images/ubuntu/Compile/nginx/setServer.png)
+> Edit ServerName by your IP if you dont have DNS, add a `#` to ServerAdmin
+
+
+`cd /usr/local/apache2/bin`
+`./apachectl start`
+
+![start Apache](images/ubuntu/Compile/nginx/startApache.png
+)
