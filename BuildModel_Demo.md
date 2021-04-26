@@ -25,7 +25,7 @@ c. **Configure MySQL-Server**
 > login to mysql
 
 ![change password](images/ubuntu/changepass.png)
-> cahnge password for root, by default it is None
+> change password for root, by default it is None
 
 d. **Install Wordpress and setup**
 
@@ -259,7 +259,9 @@ Running `./configure --prefix=/usr/local/apr`
 
 > **Make install**
 
-1. **APR-Utils**
+___
+
+2. **APR-Utils**
 
 > Download it from source: wget https://mirror.downloadvn.com/apache//apr/apr-util-1.6.1.tar.gz
 
@@ -279,6 +281,8 @@ After this, running `./configure --prefix=/usr/local/apr-util --with-apr=/usr/lo
 > **Make**
 
 > **Make Install**
+
+___
 
 3. **Apache (httpd 2.4)**
 
@@ -306,3 +310,90 @@ Running `./configure --prefix=/usr/local/apache2 --with-apr=/usr/local/apr/ --wi
 
 ![start Apache](images/ubuntu/Compile/nginx/startApache.png
 )
+
+___
+
+### 3. More Configuration
+
+1. **Reverse Proxy**
+
+![reverse Proxy](images/ubuntu/Compile/nginx/reverseProxy.png)
+
+`cd /usr/local/nginx/conf/nginx.conf`
+
+> Edit file configure like this, replace your server_name and proxy_pass
+
+> When I access to nginx, reverse proxy direct me to apache
+
+![reverse success](images/ubuntu/reverseDone.png)
+
+2. **vsftpd**
+
+![allow POrt](images/ubuntu/Compile/nginx/allowPort.png)
+
+> Allow port
+
+![configure vsftpd](images/ubuntu/Compile/nginx/configureVSFTPD.png)
+
+![add User](images/ubuntu/Compile/nginx/addUser.png)
+
+> After adding user, allow acces for it, `chown -R user:user [file]`
+
+![success vsftpd](images/ubuntu/Compile/nginx/succesvsftpd.png)
+
+> Connected
+
+3. **mysql Remote Access**
+
+![login](images/ubuntu/Compile/nginx/login_changepasswd.png)
+
+> login and change password with 'root' user
+
+![set up Database](images/ubuntu/Compile/nginx/setupDatabase.png)
+
+> Create a user for remote access
+
+![set Configure Database](images/ubuntu/Compile/nginx/editConfigDB.png)
+
+> Add a `#` before line _bind-address_
+
+![remote success](images/ubuntu/Compile/nginx/remoteSuccess.png)
+
+> Remote successfully
+
+4. **phpmyadmin**
+
+- **Install php**
+
+    * `wget https://www.php.net/distributions/php-8.0.3.tar.gz`
+    * Unzip `tar -xvzf [file]`
+
+    * To configure `/configure --with-apxs2=/usr/local/apache2/bin/apxs --with-mysqli --enable-mbstring --with-gettext`, while running if there are any missing packet, you can install with `apt-get`
+    * Next `make` and `make install`
+
+    ![add File Configure](images/ubuntu/Compile/nginx/addFileConfigure.png)
+
+    > Edit like that
+
+    * Restart apache, `/usr/local/apache2/bin/apachectl restart`
+    * To check infophp, create a file `.php` with content `<? php\nphpinfo()?>` in directory `/usr/local/apache2/htdocs/`
+
+
+- **Install phpmyadmin**
+
+    * Run `apt-get install phpmyadmin`, while running it will require to setup a database with default name: phpmyadmin, password you set.
+    * Symbolic links file `/etc/phpmyadmin/apache.conf` to `/usr/local/apache2/conf`, type `ln -s /etc/phpmyadmin/apache.conf /usr/local/apache2/conf`
+    * Symbolic link `ln -s /usr/share/phpmyadmin /usr/local/apache2/htdocs/`, because apache2 will run any file in `htdocs`.
+
+    ![seting file configure](images/ubuntu/Compile/nginx/configDatabase.png)
+
+5. **Install Wordpress**
+
+- **Set up database for Wordpress**
+
+    ![setupdatabse wordpress](images/ubuntu/Compile/nginx/databaseWordPress.png)
+
+    * `wget https://wordpress.org/latest.zip`
+    * unzip it `unzip [file`]
+    * move file after unzipping to `/usr/local/apache2/htdocs`
+    * restart apache then run
