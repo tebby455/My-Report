@@ -1,7 +1,7 @@
 # Install LAMP Stack and LEMP Stack
 
 **What is LAMP & LEMP**
-**LAMP** and **LEMMP**based on
+**LAMP** and **LEMP** based on
 
 **L** stand for **Linux**
 **A** stand for **Apache**, with **LEMP**, **E** stand for **Nginx**
@@ -10,7 +10,39 @@
 
 - All of these combined into solution for web server more flexible.
 
-## 1. LAMP Stack
+___
+
+## Summary
+
+<a href='#Section1' style='text-decoration: none'>I. Basic Model</a>
+
+1. **LAMP Stack**
+2. **LEMP Stack**
+
+
+<a href='#Section2' style='text-decoration: none'>II. Advanced Configure</a>
+
+1. **Reverse proxy for Nginx**
+2. **Remote MySQL**
+3. **vsftpd**
+4. **phpmyadmin**
+5. **Laravel**
+
+<a href='#Section3' style='text-decoration: none'>III. Compiling and Installing from Source (Apache & Nginx)</a>
+
+1. **Nginx**
+2. **Apache**
+3. **More Configuration**
+
+___P/s: All demontration I used In Ubuntu Server 20.x___
+
+___
+
+<div id='Section1'></div>
+
+# Basic Model
+
+#### 1. LAMP Stack
 
 a. **Apache2**
 > apt-get install apache2 
@@ -51,7 +83,7 @@ d. **Install Wordpress and setup**
 ![apache](images/ubuntu/apache.png)
 > Check apache by `<?php phpinfo(); ?>`
 
-## 2. LEMP Stack
+### 2. LEMP Stack
 
 ![nginx](images/ubuntu/installNginx.png)
 > _apt install php-fpm_ for support Nginx
@@ -70,7 +102,9 @@ d. **Install Wordpress and setup**
 
 ***
 
-# Advanced configure 
+<div id='Section2'></div>
+
+# II. Advanced configure 
 
 ### 1. Reverse proxy for Nginx
 
@@ -176,7 +210,10 @@ To Install `phpmyadmin`, we install these packages.
 ![success](images/ubuntu/laravelRunning.png)
 > Type _[IP]:port_
 
-# Compiling and Installing from Source (Apache & Nginx)
+
+<div id='Section3'></div>
+
+# III. Compiling and Installing from Source (Apache & Nginx)
 
 ### 1. Nginx
 
@@ -313,7 +350,8 @@ Running `./configure --prefix=/usr/local/apache2 --with-apr=/usr/local/apr/ --wi
 
 ___
 
-### 3. More Configuration
+
+### More Configuration
 
 1. **Reverse Proxy**
 
@@ -387,6 +425,8 @@ ___
 
     ![seting file configure](images/ubuntu/Compile/nginx/configDatabase.png)
 
+    ![phpmyadmin](images/ubuntu/Compile/nginx/phpmyadmin.png)
+
 5. **Install Wordpress**
 
 - **Set up database for Wordpress**
@@ -396,4 +436,39 @@ ___
     * `wget https://wordpress.org/latest.zip`
     * unzip it `unzip [file`]
     * move file after unzipping to `/usr/local/apache2/htdocs`
+
+    ![database Wordpress](images/ubuntu/Compile/nginx/databaseWordPress.png)
+
+    * edit file `wp-config.php` by your database.
+
+    ![edit file wp-config.php](images/ubuntu/Compile/nginx/editConfigWp.png)
     * restart apache then run
+
+    ![wordpress running](images/ubuntu/Compile/nginx/wordpress.png)
+
+6. **Install Laravel**
+
+- **Install Composer**
+
+    `curl -sS https://getcomposer.org/installer -o composer-setup.php`
+    `php composer-setup.php --install-dir=/usr/local/bin --filename=composer`
+
+    ![install Composer](images/ubuntu/Compile/nginx/installComposer.png)
+
+- **Install Laravel**
+
+    - Locate to your directory to install, ex: `cd /var/www/html`
+    `composer create-project --prefer-dist laravel/laravel laraveldir`
+
+    ![database Laravel](images/ubuntu/Compile/nginx/databaseLaravel.png)
+    > Create database for laravel
+
+    ![configure Laravel](images/ubuntu/Compile/nginx/configLaravel.png)
+    > Create file configure Laravel in _conf_ of apache
+
+    `Include "conf/laravel.conf"` in `httpd.conf`, include file configure Laravel 
+
+    ![edit your database](images/ubuntu/Compile/nginx/LaravelDatabase.png)
+
+    
+    ![laravel](images/ubuntu/Compile/nginx/laravel.png)
