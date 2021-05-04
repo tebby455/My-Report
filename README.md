@@ -12,4 +12,4 @@
 
 4. <a href='https://github.com/tebby455/BashScript' tyle='text-decoration: none'>Bash Script</a>
 
-5. <a href='https://github.com/tebby455/iptables' tyle='text-decoration: none'>iptables</a>
+5. <a href='https://github.com/tebby455/iptables/blob/main/iptables.md' tyle='text-decoration: none'>iptables</a>
