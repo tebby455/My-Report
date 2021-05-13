@@ -70,3 +70,11 @@ Trong một hệ thống nội bộ, việc cài thêm những gói package vớ
 
     ![install](images/repo/install.jpg)
 - Kiểm tra thử cài đặt
+
+# Hết
+***Chúc các bạn thành công***
+
+
+### Author
+Ngo Xuan Huy
+Dang Le Hoang Tuan
