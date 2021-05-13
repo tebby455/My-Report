@@ -61,7 +61,7 @@ Trong một hệ thống nội bộ, việc cài thêm những gói package vớ
     ```
     [local.repo]
     name=[Optional]
-    baseurl=http:192.168.111.111
+    baseurl=http://192.168.111.111
     enabled=1
     gpgcheck=0
     ```
