@@ -76,5 +76,5 @@ Trong một hệ thống nội bộ, việc cài thêm những gói package vớ
 
 
 ### Author
-Ngo Xuan Huy
-Dang Le Hoang Tuan
+- Ngo Xuan Huy
+- <a href='https://github.com/nightbarron/Report_Vietnix_LinuxBasic/blob/main/part10/part10.md'>Dang Le Hoang Tuan</a>
