@@ -48,7 +48,7 @@ Trong một hệ thống nội bộ, việc cài thêm những gói package vớ
 
 - Restart lại webserver
 `$ service httpd restart`
-- Lên web kiểm tra thử `http://[IP Server]/repos`
+- Lên web kiểm tra thử `http://192.168.111.111/repos`
     ![log web server](images/repo/werepo2.png)
 
 2. **Cài đặt trên Client:**
@@ -59,9 +59,9 @@ Trong một hệ thống nội bộ, việc cài thêm những gói package vớ
 - Thêm những dòng sau đây:
 
     ```
-    [base]
-    name=[IP Server]
-    baseurl=http://[IP Server]/repos
+    [local.repo]
+    name=[Optional]
+    baseurl=http:192.168.111.111
     enabled=1
     gpgcheck=0
     ```
