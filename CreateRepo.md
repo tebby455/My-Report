@@ -58,13 +58,47 @@ Trong một hệ thống nội bộ, việc cài thêm những gói package vớ
 
 - Thêm những dòng sau đây:
 
-    ```
-    [local.repo]
-    name=[Optional]
-    baseurl=http://192.168.111.111
-    enabled=1
-    gpgcheck=0
-    ```
+```
+# CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the 
+# remarked out baseurl= line instead.
+#
+#
+
+[local.repo-base]
+name=CentOS-$releasever - Base
+baseurl=http://192.168.111.111/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+#released updates 
+[local.repo-update]
+name=CentOS-$releasever - Updates
+baseurl=http://192.168.111.111/centos/$releasever/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+#additional packages that may be useful
+[local.repo-extras]
+name=CentOS-$releasever - Extras
+baseurl=http://192.168.111.111/centos/$releasever/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+#additional packages that extend functionality of existing packages
+[local.repo-centosplus]
+name=CentOS-$releasever - Plus
+baseurl=http://192.168.111.111/centos/$releasever/centosplus/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+```
 - Để kiểm tra hoạt động, ta cần bỏ hết .repo hiện đang có
 `$ sudo rm /etc/yum.repo.d/*.repo`
 
